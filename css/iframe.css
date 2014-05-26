@@ -1,0 +1,4 @@
+/*html{-webkit-transition: width 300ms ease-in;width:100%;}*/
+/*html.show-extension{width:calc(100% - 182px);}*/
+html #page-inspector{position:fixed;height:45px;width:100%;left:0;bottom:-45px;border:none;outline:none;-webkit-transition: bottom 300ms ease-in;z-index:99999;}
+html.show-extension #page-inspector{bottom:-3px;}
