@@ -1,0 +1,37 @@
+{
+  "name" : "Page Inspector",
+  "version" : "1.0",
+  "description" : "Checks whether a Web page is an Article page or a Hub Page",
+  "background" : {
+    "scripts": ["js/jquery-2.0.3.min.js","js/background2.js"]
+  },
+  "permissions": [ "cookies", "tabs"],
+ // "browser_action" :
+ // {
+ //   "default_icon" : {
+ //   	"19":"images/novanet-19-inactive.png",
+//    	"38":"images/novanet-38-inactive.png"
+//    },
+ //   "default_title" : "Page Inspector",
+//    "default_popup" : "info.html"
+//  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": ["css/iframe.css"],
+      "js" : ["js/jquery-2.0.3.min.js","js/contentscript.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+  "icons" : {
+    "48" : "images/pi-48.png",
+    "128" : "images/pi-128.png"
+  },
+  "web_accessible_resources": ["/*"],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
